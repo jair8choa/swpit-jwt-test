@@ -7,7 +7,7 @@ from auth.extensions import db
 app = Flask(__name__)
 
 #Configuration
-app.config.from_object(config.DevConfig)
+app.config.from_object(config.ProdConfig)
 
 #Blueprints
 app.register_blueprint(auth_bp, url_prefix='/auth')
