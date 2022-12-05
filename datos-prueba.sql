@@ -1,0 +1,3 @@
+INSERT INTO usuarios (Nombre,Correo,Clave) VALUES ('prueba1', "prueba1@gmail.com","$2b$12$qUwzjR6BPdpe2fntsQlqwuVLNZJ/eZjfMCa77z47xDW3C1Pn3NFDK")
+INSERT INTO usuarios (Nombre,Correo,Clave) VALUES ('prueba2', "prueba2@gmail.com","$2b$12$Ky8rzdfGxLKJY3BHe8f52egY2r2/X4oBjLnCwYUJ6.9mANNhKBkw.")
+INSERT INTO usuarios (Nombre,Correo,Clave) VALUES ('prueba3', "prueba3@gmail.com","$2b$12$FsABolUKFMLua/G9yK0sGuUOwSc7Y/GY.BoZp4GVdChLunHuk.g8e")

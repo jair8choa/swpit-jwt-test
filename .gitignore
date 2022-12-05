@@ -1,0 +1,7 @@
+__pycache__/
+bcrypt-example.py
+env.py
+# Dockerfile
+venv
+.vscode
+# .dockerignore
