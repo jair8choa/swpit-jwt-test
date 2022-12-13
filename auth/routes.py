@@ -1,10 +1,10 @@
 import json
-import auth.utils.auth_jwt as auth_jwt
+import extensions.auth_jwt as auth_jwt
 from flask import Blueprint, Flask, request, make_response,jsonify, current_app
-from .utils.validation import token_required, token_generator,password_validation
+from extensions.validation import token_required, token_generator,password_validation
 from sqlalchemy.ext.automap import automap_base
-from .extensions import db
-from .models.usuario import Usuario
+from extensions.extensions import db
+from models.Usuario import Usuario
 from json import dumps
 
 auth_bp = Blueprint('auth_bp', __name__)

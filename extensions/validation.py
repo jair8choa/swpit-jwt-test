@@ -2,7 +2,7 @@ import jwt
 import bcrypt
 from flask import request,make_response, jsonify, current_app
 from functools import wraps
-from ..models.usuario import Usuario
+from models.Usuario import Usuario
 from .auth_jwt import token_generator,get_payload
 
 def token_required(f):

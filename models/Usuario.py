@@ -1,4 +1,4 @@
-from ..extensions import db
+from extensions.extensions import db
 class Usuario(db.Model):
     __tablename__ = 'usuarios'
     idusuario = db.Column(db.Integer, primary_key=True)
