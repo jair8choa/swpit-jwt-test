@@ -1,3 +1,4 @@
+from sqlalchemy import Integer,Column,String,Boolean,ForeignKey,Char,Date
 from extensions.extensions import db
 
 class UsuEstudiantes(db.Model):
@@ -5,7 +6,7 @@ class UsuEstudiantes(db.Model):
     idUsoEstudiante = Column(Integer, primary_key=True)
     FechaIngreso= Column(Date, unique=True, nullable=False)
     FechaTermino= Column(Date, unique=True, nullable=True)
-    activo = Column(Integer, default=1)
+    Activo = Column(Integer, default=1)
 
     idEstudiante = Column(Integer, ForeignKey('estudiantes.idEstudiantes'))
     idUsuarios = Column(Integer, ForeignKey('estudiantes.idEstudiantes'))

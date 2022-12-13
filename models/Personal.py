@@ -1,3 +1,4 @@
+from sqlalchemy import Integer,Column,String,Boolean,ForeignKey,Char,Date
 from extensions.extensions import db
 
 class Personal(db.Model):
