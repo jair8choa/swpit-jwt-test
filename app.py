@@ -12,7 +12,7 @@ app.config.from_object(config.ProdConfig)
 
 #Blueprints
 app.register_blueprint(auth_bp, url_prefix='/auth')
-app.register_blueprint()
+app.register_blueprint(encuesta_bp, url_prefix="/encuesta")
 
 #SQL
 db.init_app(app=app)

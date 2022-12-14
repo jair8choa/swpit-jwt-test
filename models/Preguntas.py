@@ -1,5 +1,5 @@
-from sqlalchemy import Integer,Column,String,Boolean,ForeignKey,Char,Date
-from ..extensions import db
+from sqlalchemy import Integer,Column,String,Boolean,ForeignKey,CHAR,Date
+from extensions.extensions import db
 
 class Preguntas(db.Model):
     __tablename__ = 'preguntas'
@@ -7,6 +7,6 @@ class Preguntas(db.Model):
     NumeroPregunta = Column(Integer, unique=False, nullable=False)
     TituloPregunta = Column(String(200), unique=False, nullable=False)
     idTipoPregunta = Column(Integer, ForeignKey('tipos.idTipoPregunta'))
-    Tipos = db.relationship("Tipos", backref='preguntas', order_by=idPregunta)
     idSeccion = Column(Integer, ForeignKey('seccion.idSeccion'))
-    Seccion = db.relationship("Seccion", backref='preguntas', order_by=idPregunta)
+    Tipos = db.relationship("Tipos", backref='preguntas', order_by=idPregunta)
+    Seccion = db.relationship("Seccion",backref='preguntas', order_by=idPregunta)

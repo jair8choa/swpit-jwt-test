@@ -1,4 +1,4 @@
-from sqlalchemy import Integer,Column,String,Boolean,ForeignKey,Char,Date
+from sqlalchemy import Integer,Column,String,Boolean,ForeignKey,CHAR,Date
 from extensions.extensions import db
 class Usuario(db.Model):
     __tablename__ = 'usuarios'

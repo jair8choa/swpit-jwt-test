@@ -1,5 +1,5 @@
-from sqlalchemy import Integer,Column,String,Boolean,ForeignKey,Char,Date
-from ..extensions import db
+from sqlalchemy import Integer,Column,String,Boolean,ForeignKey,CHAR,Date
+from extensions.extensions import db
 
 class Tipos(db.Model):
     __tablename__ = 'tipos'
