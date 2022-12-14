@@ -1,11 +1,13 @@
 import os
 import config
 from flask import Flask, render_template,request,jsonify,make_response
+from flask_cors import CORS
 from auth.routes import auth_bp
 from encuestas.routes import encuesta_bp
 from extensions.extensions import db
 
 app = Flask(__name__)
+CORS(app)
 
 #Configuration
 app.config.from_object(config.ProdConfig)

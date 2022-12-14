@@ -1,0 +1,68 @@
+
+body 
+{
+
+    background-color: #173968;
+    font-family: Verdana;
+    text-align: center;
+}
+h1
+{
+    color: #fff;
+}
+
+form 
+{
+    background-color: #fff;
+    max-width: 50%;
+    border-radius: 15px;
+    margin: 50px auto;
+    padding: 30px 20px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.09);
+}
+
+.form-control 
+{
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.form-control label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form-control input,
+.form-control select,
+.form-control textarea {
+    border: 1px solid #777;
+    border-radius: 2px;
+    font-family: inherit;
+    padding: 10px;
+    display: block;
+    width: 95%;
+}
+
+.form-control input[type="radio"],
+.form-control input[type="checkbox"] {
+    display: inline-block;
+    width: auto;
+}
+.centrar
+{
+    margin: 0 auto;
+}
+button {
+    color: #fff;
+    background-color: #173968;
+    border: transparent;
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 21px;
+    display: block;
+    width: 30%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
