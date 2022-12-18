@@ -13,25 +13,27 @@ def token_required(f):
             bearer = request.headers['Authorization']
             token = bearer.split()[1]
         else:
-            return make_response(jsonify({'message': 'token is missing'}))
+            return make_response(jsonify({'message': 'token is missing'}), 401)
         try:
             data = get_payload(token, current_app.config.get('SECRET_KEY'))
             current_user = Usuario.query.filter_by(idusuario=data['sub']).first()
         except Exception as e:
-            return make_response(jsonify({'message': 'token is invalid'}))
+            return make_response(jsonify({'message': 'token is invalid'}), 401)
         return f(current_user, *args, **kwargs)
     return decorator
 
 def password_validation(username, password):
     try:
         token = None
-        usuario = Usuario.query.filter_by(nombre=username).first()
+        usuario = Usuario.query.filter_by(Nombre=username).first()
         if usuario == None:
-            return 'user is invalid'
-        if(bcrypt.checkpw(password.encode('utf-8'), usuario.clave.encode('utf-8'))):
+            response_object = {"messages": 'user is invalid'}
+            return make_response(jsonify(response_object), 401)
+        if(bcrypt.checkpw(password.encode('utf-8'), usuario.Clave.encode('utf-8'))):
             token = token_generator(user_id=usuario.idusuario, private_key= current_app.config.get('SECRET_KEY'))
-            return token
+            return {"token": "bearer "+token, "user_id": usuario.idusuario}
         else:
-            return 'password is invalid'
+            response_object = {"messages": 'password is invalid'}
+            return make_response(jsonify(response_object), 401)
     except Exception as e:
         return str(e)

@@ -26,8 +26,7 @@ def login():
         return make_response(jsonify(response_object))
 
     token = password_validation(username, password)
-    response_object = {"token": token}
-    return make_response(jsonify(response_object))
+    return make_response(jsonify(token))
 
 @auth_bp.route('/check')
 @token_required
