@@ -4,7 +4,7 @@ import jwt
 def token_generator(user_id, private_key):
     try:
         payload = {
-            'exp': datetime.datetime.utcnow() + datetime.timedelta(days=0, minutes=2),
+            'exp': datetime.datetime.utcnow() + datetime.timedelta(days=0, minutes=10),
             'sub': user_id
         }
         return jwt.encode(payload, private_key, algorithm='HS256')
