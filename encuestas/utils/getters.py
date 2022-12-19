@@ -33,6 +33,7 @@ def get_ResultadosTA(id):
         res["cantidad3"] = resultado.cantidad3
         res["cantidad4"] = resultado.cantidad4
         res["resultado"] = resultado.resultado
+        res["mensaje"] = resultado.mensaje
         return make_response(jsonify(res))
     else:
         return make_response(jsonify({'res': 'encuesta no existe'}), 404)
@@ -46,6 +47,7 @@ def get_ResultadosCA(id):
         res["visual"] = resultado.visual
         res["auditivo"] = resultado.auditivo
         res["kinestesico"] = resultado.kinestesico
+        res["resultado"] = resultado.resultado
         return make_response(jsonify(res))
     else:
         return make_response(jsonify({'res': 'encuesta no existe'}), 404)
